@@ -43,4 +43,12 @@ public class PacMan : MonoBehaviour {
 		// Kamera mit Spieler drehen (Position wird automatisch aktualisiert)
 		Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
 	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameobject.GetComponent<Rigidbody>().tag == "Münzenmodell")
+        {
+            Debug.Log("Collision Detected"); 
+        }
+    }
 }
