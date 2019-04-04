@@ -33,9 +33,9 @@ public class PacMan : MonoBehaviour {
 				GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpForce);
 			}
 		}
-		
+	
 		// Spieler-Drehung im Sinne der Mausbewegung aktualisieren
-		transform.Rotate (0, Input.GetAxisRaw ("Mouse X") * mouseSpeed * Time.fixedDeltaTime, 0);
+		//transform.Rotate (0, Input.GetAxisRaw ("Mouse X") * mouseSpeed * Time.fixedDeltaTime, 0);
 		
 		// Kamera mit Spieler drehen (Position wird automatisch aktualisiert)
 		//Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
