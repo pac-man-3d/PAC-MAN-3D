@@ -18,7 +18,7 @@ public class CoinCollector : MonoBehaviour
 	
 	void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.GetComponent<Rigidbody>().tag == "Münzenmodell")
+        if (col.gameObject.tag == "Coin")
         {
             Debug.Log("Collision Detected"); 
         }
