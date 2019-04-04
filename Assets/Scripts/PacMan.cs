@@ -16,12 +16,9 @@ public class PacMan : MonoBehaviour {
 
     void FixedUpdate ()
 	{
-		// Spieler-Position im Sinne der betätigten Kontrollenn aktualisieren
-		GetComponent<Rigidbody>().velocity =
-			transform.right * Input.GetAxis ("Horizontal") * moveSpeed + 
-			transform.forward * Input.GetAxis ("Vertical") * moveSpeed + 
-			Vector3.up * GetComponent<Rigidbody>().velocity.y;
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		
+		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
 		
 		// Sprungfähigkeit
 		RaycastHit hit;
@@ -41,14 +38,8 @@ public class PacMan : MonoBehaviour {
 		transform.Rotate (0, Input.GetAxisRaw ("Mouse X") * mouseSpeed * Time.fixedDeltaTime, 0);
 		
 		// Kamera mit Spieler drehen (Position wird automatisch aktualisiert)
-		Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
+		//Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
 	}
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameobject.GetComponent<Rigidbody>().tag == "Münzenmodell")
-        {
-            Debug.Log("Collision Detected"); 
-        }
-    }
+    
 }
