@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CoinCollector.cs" />
      <Compile Include="Assets\Scripts\Münze.cs" />
      <Compile Include="Assets\Scripts\PacMan.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

@@ -44,11 +44,5 @@ public class PacMan : MonoBehaviour {
 		//Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
 	}
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.GetComponent<Rigidbody>().tag == "Münzenmodell")
-        {
-            Debug.Log("Collision Detected"); 
-        }
-    }
+    
 }
