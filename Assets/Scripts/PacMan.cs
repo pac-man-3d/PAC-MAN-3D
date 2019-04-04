@@ -16,12 +16,14 @@ public class PacMan : MonoBehaviour {
 
     void FixedUpdate ()
 	{
-		// Spieler-Position im Sinne der betätigten Kontrollenn aktualisieren
-		GetComponent<Rigidbody>().velocity =
-			transform.right * Input.GetAxis ("Horizontal") * moveSpeed + 
-			transform.forward * Input.GetAxis ("Vertical") * moveSpeed + 
-			Vector3.up * GetComponent<Rigidbody>().velocity.y;
+		// Spieler-Position im Sinne der betätigten Kontrollen aktualisieren
+		/*GetComponent<Rigidbody>().velocity =
+			transform.right * Input.GetAxis ("Vertical") * moveSpeed + 
+			transform.forward * Input.GetAxis ("Horizontal") * moveSpeed + 
+			Vector3.up * GetComponent<Rigidbody>().velocity.y;*/
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		
+		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
 		
 		// Sprungfähigkeit
 		RaycastHit hit;
