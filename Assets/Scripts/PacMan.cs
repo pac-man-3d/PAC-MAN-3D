@@ -7,6 +7,7 @@ public class PacMan : MonoBehaviour {
 	public float moveSpeed;
 	public float jumpForce;
 	public float mouseSpeed;
+    public float turnSpeed;
 	
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,13 @@ public class PacMan : MonoBehaviour {
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 		
 		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
+		
+		if(Input.GetKey(KeyCode.LeftArrow))
+			// transform.rotation = Quaternion.Euler(x,0,0);
+            transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
+        
+        if(Input.GetKey(KeyCode.RightArrow))
+            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
 		
 		// Sprungfähigkeit
 		RaycastHit hit;
