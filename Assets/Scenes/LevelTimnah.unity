@@ -438,7 +438,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   jumpForce: 0
-  mouseSpeed: 0
   turnSpeed: 45
 --- !u!4 &1007765687 stripped
 Transform:
@@ -656,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1007765687}
   smoothSpeed: 0.2
-  offset: {x: 250, y: 100, z: 0}
+  offset: {x: 450, y: 200, z: 0}
 --- !u!1001 &1419406069
 PrefabInstance:
   m_ObjectHideFlags: 0
