@@ -23,7 +23,7 @@ public class PacMan : MonoBehaviour {
 		
 		//Vector3.forward++;
 		
-		if(Input.GetKeyDown("d"))
+		/*if(Input.GetKeyDown("d"))
 		{
 			for(var i = 0; i < 90; i++)
 				{
