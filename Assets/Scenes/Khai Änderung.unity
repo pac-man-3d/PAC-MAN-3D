@@ -460,7 +460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 0
-  mouseSpeed: 0
   turnSpeed: 0
 --- !u!54 &1438284647
 Rigidbody:
@@ -484,3 +483,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1121045531}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438284650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438284645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94351b1868a61e740a7608ad3a01f9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
