@@ -8,7 +8,8 @@ public class PacMan : MonoBehaviour {
 	public float jumpForce;
 	//public float mouseSpeed;
     public float turnSpeed;
-	
+	public static int i=0;
+	public static int j=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +23,19 @@ public class PacMan : MonoBehaviour {
 		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
 		
 		//Vector3.forward++;
-		
-		/*if(Input.GetKeyDown("d"))
+		if(Input.GetKeyDown("d"))
 		{
-			for(var i = 0; i < 90; i++)
-				{
-					transform.Rotate (0, i * Time.deltaTime * 100, 0);
-				}
+			
+			transform.rotation = Quaternion.Euler(0, i, 0);
+			i = i+90;
 		}
+		
 		if(Input.GetKeyDown("a"))
 		{
-			for(var i = 90; i > 0; i--)
-				{
-					transform.Rotate (0, i * Time.deltaTime * 100, 0);
-				}
+			
+			transform.rotation = Quaternion.Euler(0, j, 0);
+			j = j-90;
+		}
 		}
 		/*if(Input.GetKey(KeyCode.LeftArrow))
 			// transform.rotation = Quaternion.Euler(x,0,0);
@@ -45,7 +45,7 @@ public class PacMan : MonoBehaviour {
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
 		*/
 		// Sprungfähigkeit
-		RaycastHit hit;
+	/*	RaycastHit hit;
 		Debug.DrawRay(transform.position + Vector3.up * 0.1f, Vector3.down * 0.2f, Color.yellow);
 		// wenn Spieler auf dem Boden steht...
 		if (Physics.Raycast (transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f))
@@ -57,7 +57,7 @@ public class PacMan : MonoBehaviour {
 				GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpForce);
 			}
 		}
-	
+	*/
 		// Spieler-Drehung im Sinne der Mausbewegung aktualisieren
 		//transform.Rotate (0, Input.GetAxisRaw ("Mouse X") * mouseSpeed * Time.fixedDeltaTime, 0);
 		
@@ -66,4 +66,3 @@ public class PacMan : MonoBehaviour {
 	}
 
     
-}
