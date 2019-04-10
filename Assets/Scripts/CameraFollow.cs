@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     
+    
     public float smoothSpeed = 0.2f;
     public Vector3 offset;
 
@@ -14,5 +15,14 @@ public class CameraFollow : MonoBehaviour
         Vector3 optimalePosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp (transform.position, optimalePosition,smoothSpeed);
         transform.position = smoothedPosition;
+        //Vector3 rot = target.eulerAngles;
+       // rot = new Vector3(rot.x,rot.y-90,rot.z);
+        //transform.rotation = Quaternion.Euler(rot); 
+       
+        
     }
+    
 }
+    
+ 
+     

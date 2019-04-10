@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(BoxCollider))]
 
 public class GhostBlue : MonoBehaviour {
 
@@ -32,19 +31,19 @@ public class GhostBlue : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
-        if (anfang)
+          if (anfang)
         {
-            nMA.SetDestination(new Vector3(55, 100, 213));
-            new WaitForSeconds(timerForNewPath);
+            nMA.SetDestination(new Vector3(-350, 100, 0));
+            //new WaitForSeconds(timerForNewPath);
             anfang = false;
-        }
-        if (!inCoRoutine)
+        } 
+        /*if (!inCoRoutine)
         {
             if (!wallCollision)
             {
                 StartCoroutine(DoSomething());
             }
-        }
+        } */
     } 
 
     Vector3 getNewRandomPosition()
