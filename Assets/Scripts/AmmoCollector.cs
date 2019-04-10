@@ -15,4 +15,12 @@ public class AmmoCollector : MonoBehaviour
     {
         
     }
+	void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ammo")
+        {
+            Debug.Log("Collision Detected");
+			Destroy(col.gameObject);
+        }
+    }
 }
