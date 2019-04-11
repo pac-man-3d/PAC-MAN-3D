@@ -16,6 +16,6 @@ public class CameraTest : MonoBehaviour
         transform.position = smoothedPosition;
 
         transform.LookAt(target);
-        transform.rotation = Quaternion.Euler (target.rotation.eulerAngles.x,target.rotation.eulerAngles.y-90, target.rotation.eulerAngles.z);
+        transform.rotation = Quaternion.Euler (target.rotation.eulerAngles.x+40,target.rotation.eulerAngles.y-90, target.rotation.eulerAngles.z);
 }
 }   

@@ -21,9 +21,19 @@ public class PacMan : MonoBehaviour {
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 		
 		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
-		
-		//Vector3.forward++;
 		if(Input.GetKeyDown("d"))
+		{
+			
+				{
+					transform.Rotate (0, 90, 0);
+				}
+		}
+		if(Input.GetKeyDown("a"))
+		{
+			transform.Rotate(0,-90,0);
+		}
+		//Vector3.forward++;
+		/*if(Input.GetKeyDown("d"))
 		{
 			
 			transform.rotation = Quaternion.Euler(0, i, 0);
@@ -65,4 +75,4 @@ public class PacMan : MonoBehaviour {
 		//Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
 	}
 
-    
+}
