@@ -8,9 +8,7 @@ public class PacMan : MonoBehaviour {
 	public float jumpForce;
 	//public float mouseSpeed;
     public float turnSpeed;
-	public static int i=0;
-	public static int j=0;
-    // Start is called before the first frame update
+	// Start is called before the first frame update
     void Start()
     {
         
@@ -24,9 +22,9 @@ public class PacMan : MonoBehaviour {
 		if(Input.GetKeyDown("d"))
 		{
 			
-				{
+				
 					transform.Rotate (0, 90, 0);
-				}
+				
 		}
 		if(Input.GetKeyDown("a"))
 		{
