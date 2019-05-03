@@ -8,10 +8,12 @@ TagManager:
   - Wall
   - Coin
   - Ammo
+  - movingammo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+  - 
   - Water
   - UI
   - 
