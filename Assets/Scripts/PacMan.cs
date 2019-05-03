@@ -3,8 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PacMan : MonoBehaviour {
-	
 	public float moveSpeed;
+
+	void Start(){}
+	void Update()
+	{
+		print(Input.GetAxis("Horizontal"));
+        transform.Translate(
+            moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime,
+            0f,
+            moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
+	}
+	/*public float moveSpeed;
 	public float jumpForce;
 	//public float mouseSpeed;
     public float turnSpeed;
@@ -73,4 +83,4 @@ public class PacMan : MonoBehaviour {
 		//Camera.main.transform.Rotate(new Vector3 (-Input.GetAxisRaw ("Mouse Y") * mouseSpeed * Time.fixedDeltaTime, 0, 0));
 	}
 
-}
+

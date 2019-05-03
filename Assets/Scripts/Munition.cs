@@ -37,6 +37,17 @@ using System.Collections;
 
 public class Munition : MonoBehaviour
 {
+	public float moveSpeed;
+
+	void Start(){}
+	void Update()
+	{
+		print(Input.GetAxis("Horizontal"));
+        transform.Translate(
+            moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime,
+            0f,
+            moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
+	}
   
  /*   // public member eines Scripts können bequem
     // im Unity Editor gesetzt und auch während
@@ -102,7 +113,7 @@ public class Munition : MonoBehaviour
         return eingabe;
     }
 }*/
-
+/*
 public float _ballSpeed = 2.5f;
 Rigidbody _rb;
 
@@ -114,4 +125,4 @@ void Start()
 void Update()
 {
 
-}}
+}*/}
