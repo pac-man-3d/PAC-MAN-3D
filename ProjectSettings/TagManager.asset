@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Ammo
   - movingammo
+  - Pacman
   layers:
   - Default
   - TransparentFX
