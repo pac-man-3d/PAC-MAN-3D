@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LevelMara.unity
+    guid: 527ecdb61b4cffe4a9270aae0646e1f3
+  - enabled: 1
+    path: Assets/Scenes/PAC-MAN-3D.unity
+    guid: fb494272d0008da419d41a62eff55af0
   m_configObjects: {}
