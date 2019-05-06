@@ -2264,6 +2264,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Ghost red '
       objectReference: {fileID: 0}
+    - target: {fileID: 8865297878972026043, guid: a87c69ca984f1d24d9eb1c6941ced8b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 8865297878972026021, guid: a87c69ca984f1d24d9eb1c6941ced8b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3420,6 +3425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ghost blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811470257070134706, guid: b737c9279e0f23242b42493a502a08d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 5811470257070134704, guid: b737c9279e0f23242b42493a502a08d9,
         type: 3}
@@ -9364,6 +9374,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost pink
       objectReference: {fileID: 0}
+    - target: {fileID: 3306709127940652354, guid: 5c7d5fc414c88b64c8a2e4079aa3d677,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 3306709127940652356, guid: 5c7d5fc414c88b64c8a2e4079aa3d677,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9757,6 +9772,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ghost green
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386913518277480310, guid: 72ad71fcba99f694baf72fe61ae8343f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 5386913518277480308, guid: 72ad71fcba99f694baf72fe61ae8343f,
         type: 3}
