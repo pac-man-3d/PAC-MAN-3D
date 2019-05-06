@@ -5036,8 +5036,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du steuerst Pacman mit den den Tasten a und d nach links und rechts.\nMit
-    der Leertaste kannst du Munition abschie\xDFen."
+  m_Text: "Du steuerst Pacman mit den Tasten a und d nach links und rechts.\nMit der
+    Leertaste kannst du Munition abschie\xDFen."
 --- !u!222 &689443371
 CanvasRenderer:
   m_ObjectHideFlags: 0
