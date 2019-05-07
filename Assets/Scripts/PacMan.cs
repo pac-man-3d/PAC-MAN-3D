@@ -14,14 +14,14 @@ using UnityEngine;
 public class PacMan : MonoBehaviour 
 
 {
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 20.0f;
     void Start()
 	{
 		
 	}
 	void Update()
 	{
-		Vector3 pos = Vector3.forward * 20.0f * Time.deltaTime*10;
+		Vector3 pos = Vector3.forward * moveSpeed * Time.deltaTime*10;
 		transform.Translate(pos);
 		if(Input.GetKeyDown("d"))
 
@@ -32,7 +32,7 @@ public class PacMan : MonoBehaviour
 		{
 			transform.Rotate(0,-90,0);
 		}
-		
+        checkWall();
 	}
     void checkWall()
     {
@@ -44,7 +44,7 @@ public class PacMan : MonoBehaviour
         }
         else
         {
-            moveSpeed = 5.0f;
+            moveSpeed = 20.0f;
         }
     }
 }
