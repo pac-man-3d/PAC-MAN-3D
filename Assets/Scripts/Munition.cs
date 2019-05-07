@@ -5,25 +5,21 @@ public class Munition : MonoBehaviour
 {
 	//public float moveSpeed;
 	public Transform spawnposition;
+	public Transform spawnrotation;
 	public GameObject prefab;
 	
 	
 	void Start(){}
 	void Update()
 	{		
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space))
         {
-			
 			for(int i=0; i<1; i++)
 			{
 				Vector3 ammopos = spawnposition.transform.position;
-				Instantiate(prefab, ammopos, prefab.transform.rotation);
-				ammopos = Vector3.forward * 5.0f * Time.deltaTime*10;
-				transform.Translate(ammopos);
-			//	yield WaitForSeconds (1.0f);
+				Quaternion ammorot = spawnrotation.transform.rotation;
+				Instantiate(prefab, ammopos, ammorot);
 			}
-			
 		} 
-		
 	}
 }
