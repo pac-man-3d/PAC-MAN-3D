@@ -10,7 +10,7 @@ public class PacMan : MonoBehaviour
 	}
 	void Update()
 	{
-		Vector3 pos = Vector3.forward * 10.0f * Time.deltaTime*10;
+		Vector3 pos = Vector3.forward * 20.0f * Time.deltaTime*10;
 		transform.Translate(pos);
 		if(Input.GetKeyDown("d"))
 		{		

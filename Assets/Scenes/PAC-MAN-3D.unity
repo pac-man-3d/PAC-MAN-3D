@@ -5927,7 +5927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnposition: {fileID: 498995341}
   spawnrotation: {fileID: 498995341}
-  prefab: {fileID: 8587219885255112813, guid: 3a5cfb80ce3fc1d41ba392b45064fc2c, type: 3}
+  prefab: {fileID: 2355721985313643342, guid: 582c1bcca6967c34890ab957c714e61f, type: 3}
 --- !u!1001 &1091497791
 PrefabInstance:
   m_ObjectHideFlags: 0
