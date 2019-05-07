@@ -29,6 +29,7 @@ private void OnTriggerEnter(Collider other)
         SetCountText();
     }
 }
+
 void SetCountText()
 {
     countText.text = "Ammo: " + count.ToString();

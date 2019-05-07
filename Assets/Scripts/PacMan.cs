@@ -2,18 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PacMan : MonoBehaviour {
+
+
+  
+
+
+
+ 
+       
+
+public class PacMan : MonoBehaviour 
+
+{
     public float moveSpeed = 5.0f;
-
-
-    void Start(){}
+    void Start()
+	{
+		
+	}
 	void Update()
 	{
-		Vector3 pos = Vector3.forward * moveSpeed * Time.deltaTime*10;
+		Vector3 pos = Vector3.forward * 20.0f * Time.deltaTime*10;
 		transform.Translate(pos);
-        checkWall();
- 
-        if (Input.GetKeyDown("d"))
+		if(Input.GetKeyDown("d"))
+
 		{		
 			transform.Rotate (0, 90, 0);		
 		}
@@ -21,6 +32,7 @@ public class PacMan : MonoBehaviour {
 		{
 			transform.Rotate(0,-90,0);
 		}
+		
 	}
     void checkWall()
     {
