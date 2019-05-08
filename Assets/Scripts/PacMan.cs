@@ -16,14 +16,19 @@ public class PacMan : MonoBehaviour {
         
     }
 
-    void FixedUpdate ()
+    void Update ()
 	{
-		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		print(Input.GetAxis("Horizontal"));
+		transform.Translate(
+			moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime,
+			0f,
+			moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
+		
+		/*GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 		
 		GetComponent<Rigidbody> ().AddForce (transform.right * -(moveSpeed));
-		
-		//Vector3.forward++;
-		if(Input.GetKeyDown("d"))
+		*///Vector3.forward++;
+		/*if(Input.GetKeyDown("d"))
 		{
 			
 			transform.rotation = Quaternion.Euler(0, i, 0);
@@ -36,7 +41,7 @@ public class PacMan : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(0, j, 0);
 			j = j-90;
 		}
-		}
+}*/}
 		/*if(Input.GetKey(KeyCode.LeftArrow))
 			// transform.rotation = Quaternion.Euler(x,0,0);
             transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
