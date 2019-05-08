@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PacMan : MonoBehaviour 
 {
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 20.0f;
     void Start()
 	{
 		
 	}
 	void Update()
 	{
+<<<<<<< HEAD
 		Vector3 pos = Vector3.forward * 10.0f * Time.deltaTime*10;
+=======
+		Vector3 pos = Vector3.forward * moveSpeed * Time.deltaTime*10;
+>>>>>>> bf08eafc1ae533600a927a9eef3d45164dc13152
 		transform.Translate(pos);
 		
 		if(Input.GetKeyDown("d"))
@@ -22,6 +26,7 @@ public class PacMan : MonoBehaviour
 		{
 			transform.Rotate(0,-90,0);
 		}
+<<<<<<< HEAD
 		if(Input.GetKeyDown(KeyCode.RightArrow))
 		{		
 			transform.Rotate (0, 90, 0);		
@@ -30,6 +35,9 @@ public class PacMan : MonoBehaviour
 		{
 			transform.Rotate(0,-90,0);
 		}
+=======
+        checkWall();
+>>>>>>> bf08eafc1ae533600a927a9eef3d45164dc13152
 	}
     void checkWall()
     {
@@ -41,7 +49,7 @@ public class PacMan : MonoBehaviour
         }
         else
         {
-            moveSpeed = 5.0f;
+            moveSpeed = 20.0f;
         }
     }
 }

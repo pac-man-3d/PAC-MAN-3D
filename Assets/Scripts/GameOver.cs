@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
         if (col.gameObject.tag == "Pacman")
         {
             Debug.Log("Collision Detected");
+            Debug.Log(col.gameObject);
             Destroy(col.gameObject);
             cam1.enabled = false;
             cam2.enabled = true;

@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
 
-
+        if(target != null) {
         Vector3 optimalePosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, optimalePosition, smoothSpeed);
         transform.position = smoothedPosition;
@@ -32,29 +32,31 @@ public class CameraFollow : MonoBehaviour
 
         if (transform.rotation.eulerAngles.y >= 10 && transform.rotation.eulerAngles.y < 120)
         {
-            offset = new Vector3(-400, 200, 0);
-            Debug.Log("right");
+            offset = new Vector3(-400, 250, 0);
+            //Debug.Log("right");
 
 
         }
         if (transform.rotation.eulerAngles.y >= 0 && transform.rotation.eulerAngles.y < 50 || transform.rotation.eulerAngles.y > 320)
         {
-            offset = new Vector3(0, 200, -400);
-            Debug.Log("front");
+            offset = new Vector3(0, 250, -400);
+            //Debug.Log("front");
 
         }
 
         if (transform.rotation.eulerAngles.y >= 120 && transform.rotation.eulerAngles.y < 220)
         {
-            offset = new Vector3(0, 200, 400);
-            Debug.Log("back");
+            offset = new Vector3(0, 250, 400);
+            //Debug.Log("back");
         }
         if (transform.rotation.eulerAngles.y >= 240 && transform.rotation.eulerAngles.y < 300)
         {
-            offset = new Vector3(400, 200, 0);
-            Debug.Log("left");
+            offset = new Vector3(400, 250, 0);
+          //  Debug.Log("left");
 
 
         }
+        }
     }
+    
 }
