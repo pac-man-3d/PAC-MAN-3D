@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MünzScore : MonoBehaviour
 {
     public Text countText;
-    private int count;
+    public int count;
 
     // Start is called before the first frame update
     void Start()
