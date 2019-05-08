@@ -13,6 +13,7 @@ public class PacMan : MonoBehaviour
 	{
 		Vector3 pos = Vector3.forward * 10.0f * Time.deltaTime*10;
 		transform.Translate(pos);
+		
 		if(Input.GetKeyDown("d"))
 		{		
 			transform.Rotate (0, 90, 0);		
