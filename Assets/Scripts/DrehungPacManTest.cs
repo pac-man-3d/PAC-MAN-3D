@@ -18,9 +18,9 @@ public class DrehungPacManTest : MonoBehaviour
 		//var factor : int = 100;
 		if(Input.GetKeyDown("d"))
 		{
-			for(var i = 0; i < 90; i++) //soll in die eine Richtung drehen
+			
 				{
-					transform.Rotate (0, i * Time.deltaTime * 100, 0);
+					transform.Rotate (0, 90, 0);
 				}
 		}
 		if(Input.GetKeyDown("a"))

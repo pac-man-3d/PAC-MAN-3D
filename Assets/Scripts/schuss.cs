@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoCollector : MonoBehaviour
+public class schuss : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,14 +13,7 @@ public class AmmoCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-	void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "ammo")
-        {
-            //Debug.Log("Collision Detected");
-			Destroy(col.gameObject);
-        }
+        Vector3 mupos = Vector3.forward * 60.0f * Time.deltaTime*10;
+		transform.Translate(mupos);
     }
 }

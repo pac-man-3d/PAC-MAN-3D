@@ -5,24 +5,58 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    
-    
     public float smoothSpeed = 0.2f;
     public Vector3 offset;
+    public float rotSpeed;
 
-    void LateUpdate()
+    // Update is called once per frame
+    private void Start()
     {
+        offset += offset;
+    }
+    void FixedUpdate()
+    {
+
+        if(target != null) {
         Vector3 optimalePosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp (transform.position, optimalePosition,smoothSpeed);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, optimalePosition, smoothSpeed);
         transform.position = smoothedPosition;
-        //Vector3 rot = target.eulerAngles;
-       // rot = new Vector3(rot.x,rot.y-90,rot.z);
-        //transform.rotation = Quaternion.Euler(rot); 
-       
-        
+
+
+        transform.rotation = Quaternion.Slerp(Quaternion.Euler(new Vector3(25, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z)), target.rotation, rotSpeed * Time.deltaTime);
+
+
+        //transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotSpeed * Time.deltaTime);
+
+
+
+        if (transform.rotation.eulerAngles.y >= 10 && transform.rotation.eulerAngles.y < 120)
+        {
+            offset = new Vector3(-400, 250, 0);
+            //Debug.Log("right");
+
+
+        }
+        if (transform.rotation.eulerAngles.y >= 0 && transform.rotation.eulerAngles.y < 50 || transform.rotation.eulerAngles.y > 320)
+        {
+            offset = new Vector3(0, 250, -400);
+            //Debug.Log("front");
+
+        }
+
+        if (transform.rotation.eulerAngles.y >= 120 && transform.rotation.eulerAngles.y < 220)
+        {
+            offset = new Vector3(0, 250, 400);
+            //Debug.Log("back");
+        }
+        if (transform.rotation.eulerAngles.y >= 240 && transform.rotation.eulerAngles.y < 300)
+        {
+            offset = new Vector3(400, 250, 0);
+          //  Debug.Log("left");
+
+
+        }
+        }
     }
     
 }
-    
- 
-     
