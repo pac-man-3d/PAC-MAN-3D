@@ -11,17 +11,19 @@ public class Munitionlöschen : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        void OnCollisionEnter(Collision col)
+        
+    }
+    void OnCollisionEnter(Collision col)
 		{
-        if (col.gameObject.tag == "movingammo")
+            if(gameObject != null)
+            {
+        if (col.gameObject.tag == "Wall")
         {
             Debug.Log("Collision Detected");
-			Destroy(col.gameObject);
+			Destroy(this.gameObject);
         }
-    }
-    
-	
+            }
 }
 }

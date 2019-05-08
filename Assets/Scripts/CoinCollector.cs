@@ -20,7 +20,7 @@ public class CoinCollector : MonoBehaviour
     {
         if (col.gameObject.tag == "Coin")
         {
-            Debug.Log("Collision Detected");
+         //   Debug.Log("Collision Detected");
 			Destroy(col.gameObject);
         }
     }
