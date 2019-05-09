@@ -33,11 +33,11 @@ public class killGhost : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Ghost")
+        if (col.gameObject.tag == "movingammo")
         {
             Debug.Log("Collision Detected");
             dead = true;
-
+            
 
         }
     }
