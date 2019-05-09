@@ -3584,8 +3584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerForNewPath: 0
-  TargetDistance: 0
+  Bewegbarkeit: 0
+  E: 0
+  Speed: 0
+  Phase: 0
+  v: 0
 --- !u!195 &538554698
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3971,6 +3974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pac man mit texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314030272115045276, guid: 256653f257e5c33428ccef15a81bbd72,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5314030272114683836, guid: 256653f257e5c33428ccef15a81bbd72,
         type: 3}
@@ -6175,8 +6183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerForNewPath: 0
-  TargetDistance: 0
+  Bewegbarkeit: 0
+  E: 0
+  Speed: 0
+  Phase: 0
+  v: 0
 --- !u!195 &816796319
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8554,8 +8565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerForNewPath: 0
-  TargetDistance: 0
+  Bewegbarkeit: 0
+  E: 0
+  Speed: 0
+  Phase: 0
+  v: 0
 --- !u!195 &1180655985
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14166,8 +14180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerForNewPath: 0
-  TargetDistance: 0
+  Bewegbarkeit: 0
+  E: 0
+  Speed: 0
+  Phase: 0
+  v: 0
 --- !u!195 &2052090608
 NavMeshAgent:
   m_ObjectHideFlags: 0

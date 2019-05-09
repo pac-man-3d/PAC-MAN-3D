@@ -7,19 +7,14 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(NavMesh))]
 
-public class GhostController : MonoBehaviour {
+public class GhostBlueController : MonoBehaviour {
 
     NavMeshAgent NMA;
     bool enemyCollision;
-    bool playerCollision;
     private float DistanceWV;
     private float DistanceWR;
     private float DistanceWL;
     private float DistanceWH;
-    private float DistanceGV;
-    private float DistanceGR;
-    private float DistanceGL;
-    private float DistanceGH;
     public bool Bewegbarkeit;
     public float E;
     public int Speed;
@@ -36,6 +31,7 @@ public class GhostController : MonoBehaviour {
         E = 1;
         Phase = 2;
         Bewegbarkeit = true;
+        enemyCollision = false;
         RaycastingWalls();
         t = 0;
         q = 0;
@@ -51,7 +47,7 @@ public class GhostController : MonoBehaviour {
         if (Phase == 2)
         {
             RaycastingWalls();
-            //RaycastingGhosts();
+            Debug.Log(DistanceWV);
             PacManVerfolgen();
           if (Bewegbarkeit)
            {
@@ -60,7 +56,7 @@ public class GhostController : MonoBehaviour {
                    t++;
                    v = Mathf.Round(DistanceWV);
                 }
-                if (t == 1 && Mathf.Round(DistanceWV) == (v - 45))
+                if (t == 1 && Mathf.Round(DistanceWV) == (v - 25))
                 {
                    BewegenBeiKreuzungen();
                    t++;
@@ -69,7 +65,10 @@ public class GhostController : MonoBehaviour {
                 {
                    t = 0;
                 }
-                BV(E);
+                if (!enemyCollision)
+                {
+                    BV(E);
+                }
                 if (q == 0 && enemyCollision)
                 {
                    p = transform.position;
@@ -85,18 +84,20 @@ public class GhostController : MonoBehaviour {
 
     private void PacManVerfolgen()
     {
-        GameObject pacman = GameObject.FindWithTag("Player");
+        GameObject pacman = GameObject.FindWithTag("Pacman");
         Vector3 PP = pacman.transform.position;
         Vector3 GP = transform.position;
         float PlayerDistance = Mathf.Sqrt((PP.z*PP.z) + (GP.x*GP.x));
-        Debug.Log(PlayerDistance);
-        if(PlayerDistance<200)
+        if(Phase==2)
         {
-            Bewegbarkeit = false;
-            Phase = 1;
-            Update();
-            NMA.enabled = true;
-            NMA.SetDestination(PP);
+            if (PlayerDistance < 200)
+            {
+                Bewegbarkeit = false;
+                Phase = 1;
+                Update();
+                NMA.enabled = true;
+                NMA.SetDestination(PP);
+            }
         }
         else
         {
@@ -109,23 +110,18 @@ public class GhostController : MonoBehaviour {
         }
     }
 
-    /*public void Geisterkollisionsvermeidung()
+    private void OnTriggerEnter(Collider other)
     {
-        RaycastingGhosts();
-        if(DistanceGV < 10 || DistanceGR < 10 || DistanceGL < 10 || DistanceGH < 10)
+        if (!enemyCollision)
         {
-            GetNewRandomPosition();
+            if (other.gameObject.tag == "Ghost")
+            {
+                transform.Rotate(0, 180, 0);
+                enemyCollision = true;
+            }
         }
     }
 
-    public void RaycastingGhosts()
-    {
-        RaycastingGV();
-        RaycastingGR();
-        RaycastingGL();
-        RaycastingGH();
-    } */
-	
     public void BewegenBeiKreuzungen()
     {
         if ((DistanceWR > 110 || DistanceWL > 110))
@@ -195,59 +191,6 @@ public class GhostController : MonoBehaviour {
         return DistanceWH;
     }
 
-    private float RaycastingGV()
-    {
-        RaycastHit TheHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out TheHit))
-        {
-            if (TheHit.collider.gameObject.tag == "Enemy")
-            {
-                DistanceGV = TheHit.distance;
-            }
-
-        }
-        return DistanceGV;
-    }
-
-    private float RaycastingGR()
-    {
-        RaycastHit TheHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out TheHit))
-        {
-            if (TheHit.collider.gameObject.tag == "Enemy")
-            {
-                DistanceGR = TheHit.distance;
-            }
-        }
-        return DistanceGR;
-    }
-
-    private float RaycastingGL()
-    {
-        RaycastHit TheHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out TheHit))
-        {
-            if (TheHit.collider.gameObject.tag == "Enemy")
-            {
-                DistanceGL = TheHit.distance;
-            }
-        }
-        return DistanceGL;
-    }
-
-    private float RaycastingGH()
-    {
-        RaycastHit TheHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out TheHit))
-        {
-            if (TheHit.collider.gameObject.tag == "Enemy")
-            {
-                DistanceGH = TheHit.distance;
-            }
-        }
-        return DistanceGH;
-    }
-
     public void GetNewRandomPosition()
     {
         int a = RandomNumber(1, 4);
@@ -260,7 +203,6 @@ public class GhostController : MonoBehaviour {
                 {
                     if (DistanceWV > 110)
                     {
-                        BV(E);
                         bewegt = true;
                     }
                     else
@@ -281,14 +223,11 @@ public class GhostController : MonoBehaviour {
                     else
                     {
                         transform.Rotate(0, 180, 0);
-                        RaycastingWalls();
-                        BV(E);
                         bewegt = true;
                     }
                 }
                 if (a == 3)
                 {
-
                     if (DistanceWR < 110)
                     {
                         a = a + RandomNumber(0, 1);
@@ -300,14 +239,11 @@ public class GhostController : MonoBehaviour {
                     else
                     {
                         transform.Rotate(0, 90, 0);
-                        RaycastingWalls();
-                        BV(E);
                         bewegt = true;
                     }
                 }
                 if (a == 4)
                 {
-
                     if (DistanceWL < 110)
                     {
                         a = a + RandomNumber(-3, -1);
@@ -315,14 +251,13 @@ public class GhostController : MonoBehaviour {
                     else
                     {
                         transform.Rotate(0, -90, 0);
-                        RaycastingWalls();
-                        BV(E);
                         bewegt = true;
                     }
                 }
             }
+            RaycastingWalls();
+            BV(E);
         }
-
     }
 
     public bool Bewegungsfreiheit()
@@ -345,6 +280,8 @@ public class GhostController : MonoBehaviour {
     {
         transform.Rotate(0, -(transform.eulerAngles.y - Mathf.RoundToInt(transform.eulerAngles.y / 90) * 90), 0);
         transform.Translate(new Vector3(0, 0, e * Speed * Time.deltaTime));
+        RaycastingWalls();
+        Debug.Log(DistanceWV);
         if (DistanceWV < 51)
         {
             GetNewRandomPosition();
