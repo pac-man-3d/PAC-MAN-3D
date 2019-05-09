@@ -14,11 +14,9 @@ public class Munition : MonoBehaviour
 	{		
 		if (Input.GetKeyDown(KeyCode.Space))
         {
-			
 				Vector3 ammopos = spawnposition.transform.position;
 				Quaternion ammorot = spawnrotation.transform.rotation;
 				Instantiate(prefab, ammopos, ammorot);
-			
 		} 
 	}
 }

@@ -4032,6 +4032,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 116
       objectReference: {fileID: 0}
+    - target: {fileID: 5314030271737907649, guid: 256653f257e5c33428ccef15a81bbd72,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5314030271737907648, guid: 256653f257e5c33428ccef15a81bbd72,
         type: 3}
       propertyPath: m_Enabled
