@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class GhostBlueController : MonoBehaviour {
 
-    NavMeshAgent NMA;
+ /*   NavMeshAgent NMA;
     bool enemyCollision;
     private float DistanceWV;
     private float DistanceWR;
@@ -286,5 +286,26 @@ public class GhostBlueController : MonoBehaviour {
         {
             GetNewRandomPosition();
         } 
+    }*/
+	    public float moveSpeed = 5.0f;
+
+	void Start(){}
+	void Update(){Vector3 pos = Vector3.forward * moveSpeed * Time.deltaTime*10;
+		transform.Translate(pos);
+		checkWall();
+	}
+		
+		void checkWall()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50f))
+        {
+            transform.Rotate (0, 90, 0);
+            //Debug.Log(hit.transform.name);
+        }
+        else
+        {
+            //moveSpeed = 20.0f;
+        }
     }
 }
