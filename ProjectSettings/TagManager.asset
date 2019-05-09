@@ -4,13 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Wall
   - Coin
   - Ammo
+<<<<<<< HEAD
+  - Enemy
+=======
   - movingammo
   - Pacman
   - Ghost
+>>>>>>> 2d83d05b9e04ce1523e5cf5d0018542ee0c5e783
   layers:
   - Default
   - TransparentFX
