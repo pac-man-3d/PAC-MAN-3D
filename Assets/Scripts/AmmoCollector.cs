@@ -17,7 +17,7 @@ public class AmmoCollector : MonoBehaviour
     }
 	void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "ammo")
+        if (col.gameObject.tag == "Ammo")
         {
             //Debug.Log("Collision Detected");
 			Destroy(col.gameObject);
