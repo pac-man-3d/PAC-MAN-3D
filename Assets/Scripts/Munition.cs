@@ -7,9 +7,13 @@ public class Munition : MonoBehaviour
 	public Transform spawnposition;
 	public Transform spawnrotation;
 	public GameObject prefab;
+	public float reloadTime = 3f;
 	
 	
-	void Start(){}
+	void Start()
+	{
+		
+	}
 	void Update()
 	{		
 		if (Input.GetKeyDown(KeyCode.Space))
