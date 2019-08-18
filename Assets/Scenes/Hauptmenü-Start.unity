@@ -3564,7 +3564,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 28100597899276320, guid: 72ad71fcba99f694baf72fe61ae8343f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72ad71fcba99f694baf72fe61ae8343f, type: 3}
 --- !u!1 &538554696 stripped
 GameObject:
@@ -3579,16 +3580,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538554696}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bewegbarkeit: 0
-  E: 0
-  Speed: 0
-  Phase: 0
-  v: 0
+  moveSpeed: 5
 --- !u!195 &538554698
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6183,11 +6180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bewegbarkeit: 0
-  E: 0
-  Speed: 0
-  Phase: 0
-  v: 0
+  moveSpeed: 5
 --- !u!195 &816796319
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6195,7 +6188,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816796317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 100
@@ -8560,16 +8553,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180655983}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bewegbarkeit: 0
-  E: 0
-  Speed: 0
-  Phase: 0
-  v: 0
+  moveSpeed: 5
 --- !u!195 &1180655985
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14175,16 +14164,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052090606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13784f8b62540254cab51f1921402796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bewegbarkeit: 0
-  E: 0
-  Speed: 0
-  Phase: 0
-  v: 0
+  moveSpeed: 5
 --- !u!195 &2052090608
 NavMeshAgent:
   m_ObjectHideFlags: 0
